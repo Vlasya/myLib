@@ -103,9 +103,24 @@
 
 
 
-
+// ЗАполняет массив рандомными числами
 // function genRandomArray(arr=[],min,max){
 // 	for(i=0;i<arr.length;i++){
 // 		arr[i]=Math.floor(Math.random() * (max - min)) + min;
 // 	}
+// }
+
+// Сортирует и возвращает массив с уникальными значениями
+// function sort_unicArr(arr){
+// 	arr=arr.sort(function(a,b){
+// 	  return a-b;
+// 	  console.log(arr,'sort');
+//   });
+//   var retArr=[];
+//   for(var i=0;i<arr.length;i++){
+// 	  if(arr[i-1]!==arr[i]){
+// 		  retArr.push(arr[i]);
+// 	  }
+//   }
+//   return retArr;
 // }
