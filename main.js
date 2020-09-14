@@ -137,3 +137,24 @@
 // }
 // let a= count();
 // console.log(a());
+
+
+// Собираем все обьекты в один
+// function convert(obj){
+// 	if(typeof obj!=='object'||Array.isArray(obj)) return 'Только объекты';
+
+// 	let newObject={};
+// 	returnNewObj(newObject,obj)
+// 	return newObject
+// }
+
+// function returnNewObj(newObject,obj){
+// 	for(let el in obj){
+// 		if(typeof obj[el]==='object'){
+// 			returnNewObj(newObject,obj[el])
+// 		}else{
+// 			newObject[el]=obj[el]
+// 		}
+// 	}
+// }
+// console.log('returnNewObj(obj): ', newObject);
