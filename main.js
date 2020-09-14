@@ -124,3 +124,16 @@
 //   }
 //   return retArr;
 // }
+
+
+//Счетчик
+
+// function count(){
+// 	let i=0;
+// 	return function(){
+// 		i++
+// 		return i
+// 	}
+// }
+// let a= count();
+// console.log(a());
