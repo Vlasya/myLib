@@ -104,57 +104,91 @@
 
 
 // ЗАполняет массив рандомными числами
-// function genRandomArray(arr=[],min,max){
-// 	for(i=0;i<arr.length;i++){
-// 		arr[i]=Math.floor(Math.random() * (max - min)) + min;
-// 	}
-// }
+function genRandomArray(arr=[],min,max){
+	for(i=0;i<arr.length;i++){
+		arr[i]=Math.floor(Math.random() * (max - min)) + min;
+	}
+}
 
 // Сортирует и возвращает массив с уникальными значениями
-// function sort_unicArr(arr){
-// 	arr=arr.sort(function(a,b){
-// 	  return a-b;
-// 	  console.log(arr,'sort');
-//   });
-//   var retArr=[];
-//   for(var i=0;i<arr.length;i++){
-// 	  if(arr[i-1]!==arr[i]){
-// 		  retArr.push(arr[i]);
-// 	  }
-//   }
-//   return retArr;
-// }
+function sort_unicArr(arr){
+	arr=arr.sort(function(a,b){
+	  return a-b;
+	  console.log(arr,'sort');
+  });
+  var retArr=[];
+  for(var i=0;i<arr.length;i++){
+	  if(arr[i-1]!==arr[i]){
+		  retArr.push(arr[i]);
+	  }
+  }
+  return retArr;
+}
 
 
 //Счетчик
 
-// function count(){
-// 	let i=0;
-// 	return function(){
-// 		i++
-// 		return i
-// 	}
-// }
-// let a= count();
-// console.log(a());
+function count(){
+	let i=0;
+	return function(){
+		i++
+		return i
+	}
+}
+let a= count();
+console.log(a());
 
 
 // Собираем все обьекты в один
-// function convert(obj){
-// 	if(typeof obj!=='object'||Array.isArray(obj)) return 'Только объекты';
+function convert(obj){
+	if(typeof obj!=='object'||Array.isArray(obj)) return 'Только объекты';
 
-// 	let newObject={};
-// 	returnNewObj(newObject,obj)
-// 	return newObject
-// }
+	let newObject={};
+	returnNewObj(newObject,obj)
+	return newObject
+}
 
-// function returnNewObj(newObject,obj){
-// 	for(let el in obj){
-// 		if(typeof obj[el]==='object'){
-// 			returnNewObj(newObject,obj[el])
-// 		}else{
-// 			newObject[el]=obj[el]
-// 		}
-// 	}
-// }
+function returnNewObj(newObject,obj){
+	for(let el in obj){
+		if(typeof obj[el]==='object'){
+			returnNewObj(newObject,obj[el])
+		}else{
+			newObject[el]=obj[el]
+		}
+	}
+}
 // console.log('returnNewObj(obj): ', newObject);
+
+
+
+// Проверка числа на простоту
+
+function isNatural(number) {
+	if(number<2) return false;
+	if(number===2) return true;
+	for(let i=3;i<=number;i++){
+		if(number%2==0){
+			return false
+		}else{
+			return true
+		}
+	}
+}
+
+
+
+// НАходим элементы объекта в массиве с одинаковым ключом
+
+function theSameName(arr){
+	let count=arr.reduce(function(prev,item){
+		prev[item.name]=(prev[item.name] || 0)+1;
+		return  prev
+},{})
+
+
+let same= arr.filter(function(obj){
+return count[obj.name]>1
+})
+
+return same
+}
