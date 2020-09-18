@@ -164,8 +164,9 @@ function returnNewObj(newObject,obj){
 // Проверка числа на простоту
 
 function isNatural(number) {
-	if(number<2 || number%2===0 ) return false;
-	for(let i=3;i<=Math.sqrt(number);i++){
+	if (number <2 ) return false;
+	if (number ===2 ) return true;
+	for(let i=2;i<=number;i++){
 		if(number%i===0){
 			return false
 		}
@@ -174,6 +175,21 @@ function isNatural(number) {
 	}
 }
 
+function isPrime(num) {
+	
+	if(
+		 num < 2 ||
+		 num > 2 && num % 2 === 0 ||
+		 num > 3 && num % 3 === 0 ||
+		 num > 6 && (num - 1) % 6 !== 0 && (num + 1) % 6 !== 0
+	) return false;
+
+	for(var i = 6, sqrt = 1 + Math.sqrt(num); i <= sqrt; i += 6)
+		 if(num % (i - 1) === 0 || num % (i + 1) === 0) return false;
+
+	return true;
+
+}
 
 
 // НАходим элементы объекта в массиве с одинаковым ключом
@@ -191,3 +207,5 @@ return count[obj.name]>1
 
 return same
 }
+
+
