@@ -163,16 +163,13 @@ function returnNewObj(newObject,obj){
 
 // Проверка числа на простоту
 
-function isNatural(number) {
-	if (number <2 ) return false;
-	if (number ===2 ) return true;
-	for(let i=2;i<=number;i++){
-		if(number%i===0){
+isPrime=function(){
+	for(i=2,sqr=Math.sqrt(this);i<=sqr;i++){
+		if(this%i===0){
 			return false
 		}
-		return true
-		
 	}
+	return this>1
 }
 
 function isPrime(num) {
