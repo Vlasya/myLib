@@ -164,14 +164,13 @@ function returnNewObj(newObject,obj){
 // Проверка числа на простоту
 
 function isNatural(number) {
-	if(number<2) return false;
-	if(number===2) return true;
-	for(let i=3;i<=number;i++){
-		if(number%2==0){
+	if(number<2 || number%2===0 ) return false;
+	for(let i=3;i<=Math.sqrt(number);i++){
+		if(number%i===0){
 			return false
-		}else{
-			return true
 		}
+		return true
+		
 	}
 }
 
