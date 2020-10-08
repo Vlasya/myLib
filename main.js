@@ -206,3 +206,17 @@ return same
 }
 
 
+//Клонирует массив
+function clone(obj){
+		let cloneObj={};
+		cloneObj=Object.assign(cloneObj,obj);
+		for(let key in obj){
+			console.log('sfd',key);
+			console.log(typeof obj[key]);
+			if(typeof obj[key]=== 'object'){
+				console.log('in',obj[key]);
+				this.clone(obj[key])
+			}
+		}
+		return cloneObj
+	}
