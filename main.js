@@ -220,3 +220,11 @@ function clone(obj){
 		}
 		return cloneObj
 	}
+
+
+	// Сортировка массива обектов по полю
+
+	function sort(field){
+		return (a,b)=>b[field]>a[field]?1:-1
+	}
+	arr.sort(sort('field'))
